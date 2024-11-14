@@ -6,7 +6,7 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
   let(:category) { FactoryBot.create :category }
   let(:supplier) { FactoryBot.create :supplier }
 
-  describe 'GET #index' do
+  context 'GET #index' do
     it 'returns status 200' do
       get :index
       expect(response).to be_successful
@@ -14,7 +14,7 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
     end
   end
 
-    describe 'POST #create' do
+    context 'POST #create' do
       it 'creates a new Produto' do
         product_params = FactoryBot.attributes_for(:product, category_id: category.id, supplier_id: supplier.id)
         expect {post :create, params: { product: product_params }
@@ -23,15 +23,27 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
     end
   end
   
-  describe 'GET #show' do
+  context 'GET #show' do
     it 'returns a success response' do
       get :show, params: { id: product.id }
       expect(response).to be_successful
       expect(JSON.parse(response.body)['id']).to eq(product.id)
     end
-  end
 
-  describe 'PUT #update' do
+
+  #   context 'quando o produto não existe' do
+  #     before { get :show, params: { id: 'invalido' } }
+
+  #     it 'retorna status 404' do
+  #       expect(response).to have_http_status(404)
+  #     end
+
+  #     it 'retorna uma mensagem de erro' do
+  #       expect(json['error']).to eq('Produto não encontrado')
+  #     end
+  # end
+
+  context 'PUT #update' do
    it 'update product' do
      put :update, params: {id: product.id, product: {name: 'mudou'}}
      product.reload
@@ -40,7 +52,7 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
    end
   end
 
-    describe 'DELETE #destroy' do
+    context 'DELETE #destroy' do
     it 'deletes the product' do
       product
       expect {
