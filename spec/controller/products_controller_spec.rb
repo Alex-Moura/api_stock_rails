@@ -29,20 +29,8 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
       expect(response).to be_successful
       expect(JSON.parse(response.body)['id']).to eq(product.id)
     end
-
-
-  #   context 'quando o produto não existe' do
-  #     before { get :show, params: { id: 'invalido' } }
-
-  #     it 'retorna status 404' do
-  #       expect(response).to have_http_status(404)
-  #     end
-
-  #     it 'retorna uma mensagem de erro' do
-  #       expect(json['error']).to eq('Produto não encontrado')
-  #     end
-  # end
-
+  end
+  
   context 'PUT #update' do
    it 'update product' do
      put :update, params: {id: product.id, product: {name: 'mudou'}}

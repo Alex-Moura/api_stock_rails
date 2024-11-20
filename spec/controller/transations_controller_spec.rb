@@ -5,11 +5,13 @@ RSpec.describe Api::V1::TransationsController, type: :controller do
   let(:transation) { FactoryBot.create :transation }
   let(:product) { FactoryBot.create :product }
 
-  context 'GET #index' do
-    it 'returns status 200' do
-      get :index
-      expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body).size).to eq(Transation.count)
+  describe 'GET #index' do
+    context 'transation valid' do
+      it 'returns status 200' do
+        get :index
+        expect(response).to have_http_status(:ok)
+        expect(JSON.parse(response.body).size).to eq(Transation.count)
+      end
     end
   end
 
