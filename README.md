@@ -1,24 +1,17 @@
-# README
+## **Visão Geral**
+A API foi desenvolvida para gerenciar um sistema de controle de estoque. O backend é implementado em **Ruby on Rails** e segue padrões RESTful.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### **Funcionalidades Principais**
+- Cadastro e manutenção de **produtos**.
+- Gerenciamento de **categorias** dos produtos.
+- Gerenciamento de **fornecedores** dos produtos.
+- Registro de **movimentações** (entrada e saída de estoque).
+---
 
-Things you may want to cover:
+## **Requisitos**
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- **Ruby**: 3.2.0
+- **Rails**: 7.2.2
+- **Banco de Dados**: PostgreSQL (versão mínima 13)
+- **RSpec e FactoryBot**: para testes automatizados
+---
