@@ -31,7 +31,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
-  gem 'rspec-rails', '~> 7.0.0'
+  gem 'rspec-rails', '~> 7.1.0'
   gem 'ffaker', '~> 2.2'
   gem 'pry-rails', '~> 0.3.3'
 
