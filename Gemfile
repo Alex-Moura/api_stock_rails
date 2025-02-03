@@ -32,7 +32,7 @@ gem "bootsnap", require: false
 group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'rspec-rails', '~> 7.0.0'
-  gem 'ffaker', '~> 2.2'
+  gem 'ffaker', '~> 2.24'
   gem 'pry-rails', '~> 0.3.3'
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
